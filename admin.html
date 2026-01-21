@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin – Modern Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="logo">Modern<span>Store</span> Admin</div>
+    <nav>
+      <a href="index.html" class="btn ghost">Back to store</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section>
+      <h2>Add product</h2>
+      <div class="modal-content" style="max-width:420px;padding:18px;margin-top:10px;">
+        <input type="text" id="prodName" placeholder="Name" />
+        <input type="number" id="prodPrice" placeholder="Price" />
+        <input type="text" id="prodImage" placeholder="Image URL" />
+        <input type="text" id="prodDesc" placeholder="Description" />
+        <button id="addProductBtn" class="btn primary full">Add</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
