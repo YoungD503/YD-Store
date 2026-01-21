@@ -1,212 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>YoungDesert Merch</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8">
+  <title>YoungDesert</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Top bar -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#">
-        <span class="brand-mark">YD</span>
-        <span class="brand-text">
-          <strong>YoungDesert</strong>
-          <small>Merch Store</small>
-        </span>
-      </a>
 
-      <nav class="nav">
-        <button class="nav-btn" data-filter="all">All</button>
-        <button class="nav-btn" data-filter="tees">Tees</button>
-        <button class="nav-btn" data-filter="hoodies">Hoodies</button>
-        <button class="nav-btn" data-filter="caps">Caps</button>
-        <button class="nav-btn" data-filter="accessories">Accessories</button>
-      </nav>
+<header class="navbar">
+  <div class="logo">YoungDesert</div>
+  <nav>
+    <a href="book.html">Book</a>
+    <a href="merch.html">Merch</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-      <div class="actions">
-        <button id="themeBtn" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
-          <span class="dot"></span>
-        </button>
-        <button id="cartBtn" class="cart-btn" aria-label="Open cart">
-          Cart
-          <span id="cartCount" class="pill">0</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <p class="badge">DROP • 2026</p>
-        <h1>Wear the mindset.</h1>
-        <p class="muted">
-          Minimal, premium, and clean — built for builders.
-          Launch fast now, plug Stripe in later.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#shop" class="btn primary">Shop Now</a>
-          <button id="stripeGuideBtn" class="btn ghost">Stripe Setup Guide</button>
-        </div>
-
-        <p class="tiny muted">
-          Payments are currently in <strong>Demo Mode</strong> (no Stripe links yet).
-        </p>
-      </div>
-
-      <div class="hero-card">
-        <div class="glass">
-          <h3>Store Status</h3>
-          <ul class="list">
-            <li><span class="k">Theme</span><span class="v">Grey Dark / Black / White</span></li>
-            <li><span class="k">Platform</span><span class="v">HTML • CSS • JS</span></li>
-            <li><span class="k">Payments</span><span class="v">Stripe-ready</span></li>
-            <li><span class="k">Hosting</span><span class="v">GitHub Pages / Netlify</span></li>
-          </ul>
-          <div class="divider"></div>
-          <p class="muted tiny">
-            When you create Stripe Payment Links, paste them into <code>app.js</code>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Shop -->
-  <main id="shop" class="container">
-    <div class="shop-head">
-      <h2>Featured Products</h2>
-      <div class="shop-tools">
-        <div class="search">
-          <input id="searchInput" type="search" placeholder="Search products..." autocomplete="off"/>
-        </div>
-        <select id="sortSelect" class="select" aria-label="Sort products">
-          <option value="featured">Sort: Featured</option>
-          <option value="priceLow">Price: Low → High</option>
-          <option value="priceHigh">Price: High → Low</option>
-          <option value="nameAZ">Name: A → Z</option>
-        </select>
-      </div>
-    </div>
-
-    <section id="grid" class="grid" aria-live="polite"></section>
-
-    <footer class="footer">
-      <div class="divider"></div>
-      <p class="muted tiny">
-        © <span id="year"></span> YoungDesert • Built to scale.
-      </p>
-    </footer>
-  </main>
-
-  <!-- Product Modal -->
-  <div id="productModal" class="modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Product details">
-      <button class="modal-close" aria-label="Close" data-close>✕</button>
-
-      <div class="modal-body">
-        <div class="modal-media" id="modalMedia"></div>
-
-        <div class="modal-info">
-          <p class="badge" id="modalCategory"></p>
-          <h3 id="modalTitle"></h3>
-          <p class="muted" id="modalDesc"></p>
-
-          <div class="row">
-            <div class="price" id="modalPrice"></div>
-            <div class="chips" id="modalTags"></div>
-          </div>
-
-          <div class="row">
-            <label class="label">
-              Size
-              <select id="sizeSelect" class="select">
-                <option>XS</option><option>S</option><option selected>M</option>
-                <option>L</option><option>XL</option><option>XXL</option>
-              </select>
-            </label>
-
-            <label class="label">
-              Qty
-              <div class="qty">
-                <button id="qtyMinus" class="qty-btn" aria-label="Decrease quantity">−</button>
-                <input id="qtyInput" class="qty-input" value="1" inputmode="numeric" />
-                <button id="qtyPlus" class="qty-btn" aria-label="Increase quantity">+</button>
-              </div>
-            </label>
-          </div>
-
-          <div class="modal-actions">
-            <button id="addToCartBtn" class="btn primary">Add to Cart</button>
-            <button id="buyNowBtn" class="btn dark">Buy Now</button>
-          </div>
-
-          <p class="tiny muted" id="stripeHint">
-            Add Stripe links in <code>app.js</code> to enable checkout.
-          </p>
-        </div>
-      </div>
+<section class="hero">
+  <div class="hero-overlay">
+    <h1>What's My Next Move?</h1>
+    <p>
+      Discover the story of growth, faith, and self-discovery through YoungDesert.
+    </p>
+    <div class="hero-buttons">
+      <a href="book.html" class="btn primary">Buy The Book</a>
+      <a href="merch.html" class="btn outline">Shop Merch</a>
     </div>
   </div>
+</section>
 
-  <!-- Cart Drawer -->
-  <aside id="cartDrawer" class="drawer" aria-hidden="true">
-    <div class="drawer-backdrop" data-close-cart></div>
-    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Shopping cart">
-      <div class="drawer-head">
-        <h3>Your Cart</h3>
-        <button class="icon-btn" data-close-cart aria-label="Close cart">✕</button>
-      </div>
+<footer>
+  © 2026 YoungDesert — Built by Sergio Gonzalez
+</footer>
 
-      <div id="cartItems" class="cart-items"></div>
-
-      <div class="drawer-foot">
-        <div class="totals">
-          <span class="muted">Total</span>
-          <strong id="cartTotal">$0.00</strong>
-        </div>
-
-        <button id="checkoutBtn" class="btn primary" disabled>
-          Checkout (Stripe not connected)
-        </button>
-
-        <button id="clearCartBtn" class="btn ghost">Clear cart</button>
-
-        <p class="tiny muted">
-          Checkout will activate after you paste Stripe Payment Links in <code>app.js</code>.
-        </p>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Stripe Guide Modal -->
-  <div id="guideModal" class="modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close-guide></div>
-    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Stripe setup guide">
-      <button class="modal-close" aria-label="Close" data-close-guide>✕</button>
-      <div class="pad">
-        <h3>Stripe Setup (Fast)</h3>
-        <ol class="muted">
-          <li>Create a Stripe account.</li>
-          <li>Go to <strong>Payment Links</strong> → Create a link for each product.</li>
-          <li>Copy each payment link URL.</li>
-          <li>Open <code>app.js</code> and paste the URLs into <code>STRIPE_LINKS</code>.</li>
-          <li>Done — your “Buy Now” + “Checkout” will work.</li>
-        </ol>
-        <div class="divider"></div>
-        <p class="tiny muted">
-          Tip: Later, we can upgrade to a real Stripe Checkout Session with inventory, shipping rates, and order metadata.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
 </body>
 </html>
