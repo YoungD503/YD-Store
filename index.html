@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>YoungDesert</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <title>Modern Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="top-nav">
+    <div class="logo">Modern<span>Store</span></div>
+    <nav>
+      <button id="loginBtn" class="btn ghost">Login</button>
+      <button id="logoutBtn" class="btn ghost hidden">Logout</button>
+      <a href="admin.html" class="btn ghost">Admin</a>
+      <div class="cart-icon" id="cartToggle">
+        🛒 <span id="cartCount">0</span>
+      </div>
+    </nav>
+  </header>
 
-<header class="navbar">
-  <div class="logo">YoungDesert</div>
-  <nav>
-    <a href="book.html">Book</a>
-    <a href="merch.html">Merch</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <main class="layout">
+    <section class="hero">
+      <h1>Discover your next favorite product</h1>
+      <p>Clean, modern, and ready for real sales.</p>
+    </section>
 
-<section class="hero">
-  <div class="hero-overlay">
-    <h1>What's My Next Move?</h1>
-    <p>
-      Discover the story of growth, faith, and self-discovery through YoungDesert.
-    </p>
-    <div class="hero-buttons">
-      <a href="book.html" class="btn primary">Buy The Book</a>
-      <a href="merch.html" class="btn outline">Shop Merch</a>
+    <section class="products" id="productList">
+      <!-- Products injected by JS -->
+    </section>
+
+    <aside class="cart-panel hidden" id="cartPanel">
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <div class="cart-summary">
+        <span>Total:</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button id="checkoutBtn" class="btn primary full">Checkout</button>
+    </aside>
+  </main>
+
+  <!-- Simple auth modal -->
+  <div class="modal hidden" id="authModal">
+    <div class="modal-content">
+      <h2>Login</h2>
+      <input type="email" id="authEmail" placeholder="Email" />
+      <input type="password" id="authPassword" placeholder="Password" />
+      <button id="authSubmit" class="btn primary full">Login / Sign up</button>
+      <button id="authClose" class="btn ghost full">Close</button>
     </div>
   </div>
-</section>
 
-<footer>
-  © 2026 YoungDesert — Built by Sergio Gonzalez
-</footer>
+  <!-- Firebase SDKs -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
 
+  <!-- Your scripts -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
